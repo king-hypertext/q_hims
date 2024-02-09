@@ -1,0 +1,337 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url();
+    background-color: #a6b3bbf1;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.app-body {
+    width: 100%;
+    max-width: 14in;
+    display: flex;
+    flex: 0 0 auto;
+    background-color: #fff;
+    color: inherit;
+    min-height: 100vh;
+}
+
+.app-col-navigation {
+    width: 200px;
+}
+
+.app-col-main {
+    width: calc(100% - 200px);
+    height: 100vh;
+}
+
+.app-navigation {
+    width: 100%;
+    max-width: 200px;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0 !important;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    color: #222;
+}
+.app-name{
+    font-weight: 500;
+    font-family: '';
+    font-style: oblique;
+}
+.app-header {
+    /* width: 100%; */
+    position: -webkit-sticky;
+    position: sticky;
+    right: 0;
+    top: 0 !important;
+    width: 100% !important;
+}
+
+@media all {}
+
+.bg-custom-blue {
+    background-color: var(--custom-blue) !important;
+}
+
+/* nav css */
+.side-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #003366;
+    height: 100%;
+    visibility: visible;
+    width: 100%;
+    max-width: 280px !important;
+    z-index: 998;
+}
+
+.table-image {
+    width: 50px;
+    height: 50px;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 5px;
+}
+
+.side-wrapper::-webkit-scrollbar {
+    width: 3px;
+}
+
+.table-responsive::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-thumb,
+.side-wrapper::-webkit-scrollbar-track,
+.side-wrapper::-webkit-scrollbar-thumb {
+    background-color: #f8f9fa;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover,
+.side-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #717171 !important;
+}
+
+.logo-content {
+    min-width: 55px;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    place-self: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 90;
+    transition: background-color, color, .3s ease-in-out;
+}
+
+.logo-content.scroll {
+    background-color: #f8f9fa;
+    color: #003366;
+    transition: background-color, color, .3s ease-in-out;
+}
+
+.dropdown .dropdown-menu.dropdown-menu-end {
+    right: -9px !important;
+    border: none;
+    outline: none;
+    left: 0;
+    padding: 0;
+    transition: top right .3s ease-out;
+    border-radius: 0 !important;
+}
+
+.dropdown-menu.dropdown-menu-end li {
+    padding: 2px 0 !important;
+    margin: 0 auto;
+}
+
+.dropdown-menu.dropdown-menu-end li a:hover {
+    background-color: var(--bs-gray-300);
+    color: var(--custom-blue);
+}
+
+.dropdown-menu.dropdown-menu-end li a {
+    width: 100%;
+    min-height: 20px;
+}
+
+.back-drop {
+    position: fixed;
+    top: 60px;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.175);
+    display: none;
+    visibility: hidden;
+    transition: all ease-in .3s;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 280px;
+    min-height: 50px;
+    display: flex;
+    place-content: space-between;
+    place-items: center;
+    place-self: center;
+    z-index: 999;
+}
+
+#nav-toggler:focus,
+#nav-toggler:focus-within,
+#nav-toggler:active {
+    border: none !important;
+    outline: none !important;
+}
+
+.user-image {
+    width: 45px;
+    height: 45px;
+    background-color: #003366;
+}
+
+.side-wrapper nav ul li.nav-item.open>a:is(:active, :focus) {
+    background-color: #233;
+    color: #fff;
+}
+
+.nav-item a i {
+    margin-right: 12px;
+}
+
+.nav-item.open>a.nav-link {
+    background-color: #233;
+}
+
+.dropdown-wrapper.show li.nav-item a {
+    font-size: 14px;
+}
+
+.nav-list-icon {
+    font-size: 8px;
+}
+
+.bg-none {
+    background: none !important;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #003366;
+    cursor: pointer;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* main content css */
+.main-content {
+    position: relative;
+    width: 100%;
+    max-width: calc(100% - 280px) !important;
+    margin-top: 70px;
+    margin-left: 280px;
+    height: 100%;
+    transition: all ease-in .1s;
+}
+
+.dropdown-menu-start[data-bs-popper] {
+    left: -45px !important;
+}
+
+@media (max-width: 992px) {
+    .side-wrapper {
+        top: 60px;
+        left: -320px;
+        visibility: hidden;
+        transition: all ease-in .1s;
+    }
+
+    .nav-wrapper {
+        max-width: 100%;
+        left: 0;
+    }
+
+    .main-content {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        transition: all ease-in .1s;
+    }
+
+    .side-wrapper.show {
+        left: 0;
+        visibility: visible;
+        transition: all ease-in .3s;
+    }
+
+    .back-drop.show {
+        display: block;
+        visibility: visible;
+        transition: all ease-in .3s;
+        z-index: 997;
+    }
+}
+
+/* nav list styles */
+
+.side-wrapper nav ul li.nav-item a {
+    margin: 0 auto;
+    text-align: left !important;
+    border-radius: 6px;
+    padding: .5rem 0 .5rem 2.5rem;
+    font-size: 110%;
+    color: #fff;
+    /* background-color: #ffffff0c; */
+}
+
+.side-wrapper nav ul li.nav-item.active a {
+    margin: 0 auto;
+    text-align: left !important;
+    border-radius: 6px;
+    padding: .5rem 0 .5rem 2.5rem;
+    background-color: #fff;
+    color: #003366;
+}
+
+.side-wrapper nav ul li.nav-item a:hover {
+    background-color: #e9e9e9c2;
+    color: #003366;
+}
+
+.nav-item .nav-link.dropdown {
+    display: flex;
+    place-content: space-between;
+    place-items: center;
+}
+
+
+.nav-item .nav-link.dropdown+ul.dropdown-wrapper {
+    background-color: #ffffff11 !important;
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+.nav-item .nav-link.dropdown>span:nth-child(2) {
+    margin: 8px 15px;
+    place-items: center;
+    font-size: 12px;
+}
+
+@media (max-width: 576px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 992px) {}
+
+@media (min-width: 1800px) {}
+
+/* custom modify styles in bootstrap */
+.form-select:focus,
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.05rem rgba(13, 110, 253, 0.25);
+
+}
+
+.form-outline .form-control {
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+}
