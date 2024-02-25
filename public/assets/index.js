@@ -1,7 +1,7 @@
 (function () {
 	console.log("js loaded");
 	setInterval(() => {
-		document.querySelector("[data-date-time]").innerHTML =
+		document.querySelector("[data-date_time]").innerHTML =
 			new Date().toUTCString();
 	}, 1000);
 })();
@@ -26,11 +26,18 @@ $(document).ready(function () {
 			e.toggle("fa-chevron-right");
 			e.toggle("fa-chevron-down");
 		});
-	document.querySelectorAll(".nav-item > a").forEach((target) => {
-		new mdb.Ripple(target, {
-			rippleColor: "#fff",
-			rippleDuration: "1000ms",
-		});
-	});
-
+	// document.querySelectorAll(".nav-item > a").forEach((target) => {
+	// 	new mdb.Ripple(target, {
+	// 		rippleColor: "#fff",
+	// 		rippleDuration: "1000ms",
+	// 	});
+	// });
+	
+	$('input[name="dob"]').datepicker({
+		dateFormat: "dd-mm-yy",
+		maxDate: '+0D',
+		changeMonth: true,
+		changeYear: true,
+		showOtherMonths: true,
+	})
 });

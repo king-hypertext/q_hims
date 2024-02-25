@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PatientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app-layout.index');
 });
-
-
-require __DIR__.'/auth.php';
+Route::get('/add_patient', function () {
+    return view('hims.add_patient');
+})->name('add_patient');
+Route::get('/appointments', function (){
+    return view('hims.appointments', ['title'=>'appointments']);
+});
+Route::post('/add_patient', [PatientsController::class, 'store']);
+require __DIR__ . '/auth.php';

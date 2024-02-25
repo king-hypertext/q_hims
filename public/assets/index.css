@@ -5,14 +5,14 @@
 
 body {
     background: url();
-    background-color: #a6b3bbf1;
+    background-color: #001725f1;
     color: #000;
     display: flex;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+    align-items: baseline;
+    align-content: baseline;
     margin: 0 auto;
-    height: 100vh;
+    height: 100%;
 }
 
 .app-body {
@@ -22,19 +22,10 @@ body {
     flex: 0 0 auto;
     background-color: #fff;
     color: inherit;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .app-col-navigation {
-    width: 200px;
-}
-
-.app-col-main {
-    width: calc(100% - 200px);
-    height: 100vh;
-}
-
-.app-navigation {
     width: 100%;
     max-width: 200px;
     height: 100vh;
@@ -44,42 +35,37 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    background-color: #e0e0e0;
+    background-color: #b8c9cf;
     color: #222;
 }
-.app-name{
+
+.app-col-main {
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+.app-name {
     font-weight: 500;
     font-family: '';
-    font-style: oblique;
+    /* font-style: oblique; */
 }
+
 .app-header {
-    /* width: 100%; */
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
     position: -webkit-sticky;
     position: sticky;
     right: 0;
+    height: 50px;
     top: 0 !important;
-    width: 100% !important;
+    z-index: 100;
 }
-
-@media all {}
-
-.bg-custom-blue {
-    background-color: var(--custom-blue) !important;
+.nav-link.active{
+    background-color: #42434493;
+    color: #fff;
 }
-
-/* nav css */
-.side-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #003366;
-    height: 100%;
-    visibility: visible;
-    width: 100%;
-    max-width: 280px !important;
-    z-index: 998;
-}
-
 .table-image {
     width: 50px;
     height: 50px;
@@ -105,25 +91,6 @@ body {
     background-color: #717171 !important;
 }
 
-.logo-content {
-    min-width: 55px;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    place-self: center;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    z-index: 90;
-    transition: background-color, color, .3s ease-in-out;
-}
-
-.logo-content.scroll {
-    background-color: #f8f9fa;
-    color: #003366;
-    transition: background-color, color, .3s ease-in-out;
-}
 
 .dropdown .dropdown-menu.dropdown-menu-end {
     right: -9px !important;
@@ -150,180 +117,9 @@ body {
     min-height: 20px;
 }
 
-.back-drop {
-    position: fixed;
-    top: 60px;
-    height: 100%;
-    width: 100%;
-    z-index: 99;
-    background-color: rgba(0, 0, 0, 0.175);
-    display: none;
-    visibility: hidden;
-    transition: all ease-in .3s;
-}
-
-.nav-wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 280px;
-    min-height: 50px;
-    display: flex;
-    place-content: space-between;
-    place-items: center;
-    place-self: center;
-    z-index: 999;
-}
-
-#nav-toggler:focus,
-#nav-toggler:focus-within,
-#nav-toggler:active {
-    border: none !important;
-    outline: none !important;
-}
-
-.user-image {
-    width: 45px;
-    height: 45px;
-    background-color: #003366;
-}
-
-.side-wrapper nav ul li.nav-item.open>a:is(:active, :focus) {
-    background-color: #233;
-    color: #fff;
-}
-
-.nav-item a i {
-    margin-right: 12px;
-}
-
-.nav-item.open>a.nav-link {
-    background-color: #233;
-}
-
-.dropdown-wrapper.show li.nav-item a {
-    font-size: 14px;
-}
-
-.nav-list-icon {
-    font-size: 8px;
-}
-
-.bg-none {
-    background: none !important;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: #003366;
-    cursor: pointer;
-}
-
-.footer-link:hover {
-    text-decoration: underline;
-}
-
-/* main content css */
-.main-content {
-    position: relative;
-    width: 100%;
-    max-width: calc(100% - 280px) !important;
-    margin-top: 70px;
-    margin-left: 280px;
-    height: 100%;
-    transition: all ease-in .1s;
-}
-
 .dropdown-menu-start[data-bs-popper] {
-    left: -45px !important;
+    left: -40px !important;
 }
-
-@media (max-width: 992px) {
-    .side-wrapper {
-        top: 60px;
-        left: -320px;
-        visibility: hidden;
-        transition: all ease-in .1s;
-    }
-
-    .nav-wrapper {
-        max-width: 100%;
-        left: 0;
-    }
-
-    .main-content {
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        transition: all ease-in .1s;
-    }
-
-    .side-wrapper.show {
-        left: 0;
-        visibility: visible;
-        transition: all ease-in .3s;
-    }
-
-    .back-drop.show {
-        display: block;
-        visibility: visible;
-        transition: all ease-in .3s;
-        z-index: 997;
-    }
-}
-
-/* nav list styles */
-
-.side-wrapper nav ul li.nav-item a {
-    margin: 0 auto;
-    text-align: left !important;
-    border-radius: 6px;
-    padding: .5rem 0 .5rem 2.5rem;
-    font-size: 110%;
-    color: #fff;
-    /* background-color: #ffffff0c; */
-}
-
-.side-wrapper nav ul li.nav-item.active a {
-    margin: 0 auto;
-    text-align: left !important;
-    border-radius: 6px;
-    padding: .5rem 0 .5rem 2.5rem;
-    background-color: #fff;
-    color: #003366;
-}
-
-.side-wrapper nav ul li.nav-item a:hover {
-    background-color: #e9e9e9c2;
-    color: #003366;
-}
-
-.nav-item .nav-link.dropdown {
-    display: flex;
-    place-content: space-between;
-    place-items: center;
-}
-
-
-.nav-item .nav-link.dropdown+ul.dropdown-wrapper {
-    background-color: #ffffff11 !important;
-    border-radius: 7px;
-    margin-top: 5px;
-}
-
-.nav-item .nav-link.dropdown>span:nth-child(2) {
-    margin: 8px 15px;
-    place-items: center;
-    font-size: 12px;
-}
-
-@media (max-width: 576px) {}
-
-@media (max-width: 768px) {}
-
-@media (max-width: 992px) {}
-
-@media (min-width: 1800px) {}
-
 /* custom modify styles in bootstrap */
 .form-select:focus,
 .form-control:focus {
@@ -334,4 +130,107 @@ body {
 
 .form-outline .form-control {
     border: var(--bs-border-width) solid var(--bs-border-color) !important;
+}
+
+
+/* text divider */
+.divider {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.divider .divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0rem 1rem;
+}
+
+.divider .divider-text i {
+    font-size: 1rem;
+}
+
+.divider .divider-text:before,
+.divider .divider-text:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    border-top: 1px solid rgba(67, 89, 113, 0.2);
+}
+
+.divider .divider-text:before {
+    right: 100%;
+}
+
+.divider .divider-text:after {
+    left: 100%;
+}
+
+.divider.text-start .divider-text {
+    padding-left: 0;
+}
+
+.divider.text-end .divider-text {
+    padding-right: 0;
+}
+
+.divider.text-start-center .divider-text {
+    left: -25%;
+}
+
+.divider.text-end-center .divider-text {
+    right: -25%;
+}
+
+.divider.divider-dotted .divider-text:before,
+.divider.divider-dotted .divider-text:after {
+    border-style: dotted;
+    border-width: 0 1px 1px;
+    border-color: rgba(67, 89, 113, 0.2);
+}
+
+.divider.divider-dashed .divider-text:before,
+.divider.divider-dashed .divider-text:after {
+    border-style: dashed;
+    border-width: 0 1px 1px;
+    border-color: rgba(67, 89, 113, 0.2);
+}
+
+.divider.divider.divider-secondary .divider-text:before,
+.divider.divider.divider-secondary .divider-text:after {
+    border-color: #8592a3;
+}
+
+.divider.divider.divider-success .divider-text:before,
+.divider.divider.divider-success .divider-text:after {
+    border-color: #71dd37;
+}
+
+.divider.divider.divider-info .divider-text:before,
+.divider.divider.divider-info .divider-text:after {
+    border-color: #03c3ec;
+}
+
+.divider.divider.divider-warning .divider-text:before,
+.divider.divider.divider-warning .divider-text:after {
+    border-color: #ffab00;
+}
+
+.divider.divider.divider-danger .divider-text:before,
+.divider.divider.divider-danger .divider-text:after {
+    border-color: #ff3e1d;
+}
+
+.divider.divider.divider-dark .divider-text:before,
+.divider.divider.divider-dark .divider-text:after {
+    border-color: #233446;
+}
+
+.divider.divider.divider-gray .divider-text:before,
+.divider.divider.divider-gray .divider-text:after {
+    border-color: rgba(67, 89, 113, 0.1);
 }
