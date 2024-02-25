@@ -9,50 +9,60 @@
         textarea {
             max-width: 400px !important;
         }
+
+        @media (max-width: 768px) {
+
+            input,
+            select,
+            textarea {
+                min-width: 100% !important;
+            }
+        }
     </style>
-    <div class="container mb-4" style="max-width: calc(100% - 300px); float: left">
+    <div class="container mb-4" style="float: left">
         <h2>Add Patient Form</h2>
         <form autocomplete="off" method="post">
             @csrf
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="pid">OPD No:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="pid">OPD No:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required readonly type="text" class="form-control" id="pid" name="pid">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="fname">First Name:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="fname">First Name:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required autofocus type="text" class="form-control" id="fname" name="fname">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="lname">Last Name:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="lname">Last Name:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required type="text" class="form-control" id="lname" name="lname">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="dob">Date of Birth:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="dob">Date of Birth:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required type="text" class="form-control date-input" id="dob" name="dob">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="phone">Phone Number:</label>
-                <div class="col-md-10">
-                    <input required type="tel" class="form-control" id="phone" name="phone">
+                <label class="col-md-2 col-sm-4 col-form-label" for="phone">Phone Number:</label>
+                <div class="col-md-10 col-sm-8">
+                    <input required type="tel" onpaste="return false" pattern="\d*"
+                        title="Please enter only numbers [0-9]" class="form-control" id="phone" name="phone">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="email">Email:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="email">Email:</label>
+                <div class="col-md-10 col-sm-8">
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="resident_address">Residential Address:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="resident_address">Residential Address:</label>
+                <div class="col-md-10 col-sm-8">
                     <textarea required class="form-control" id="resident_address" name="resident_address" rows="3"></textarea>
                 </div>
             </div>
@@ -62,26 +72,27 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="em_cont_firstname">First Name:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="em_cont_firstname">First Name:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required type="text" class="form-control" id="em_cont_firstname" name="em_cont_firstname">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="em_cont_lastname">Last Name:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="em_cont_lastname">Last Name:</label>
+                <div class="col-md-10 col-sm-8">
                     <input type="text" class="form-control" id="em_cont_lastname" name="em_cont_lastname">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="phone">Phone Number:</label>
-                <div class="col-md-10">
-                    <input required type="tel" class="form-control" id="phone" name="phone">
+                <label class="col-md-2 col-sm-4 col-form-label" for="phone">Phone Number:</label>
+                <div class="col-md-10 col-sm-8">
+                    <input required type="tel" onpaste="return false" pattern="\d*"
+                        title="Please enter only numbers [0-9]" class="form-control" id="phone" name="phone">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="em_cont_relation">Relationship</label>
-                <div class="col-md-8">
+                <label class="col-md-2 col-sm-4 col-form-label" for="em_cont_relation">Relationship</label>
+                <div class="col-md-10">
                     <select required name="em_cont_relation" id="em_cont_relation" class="form-select text-capitalize ">
                         <option value="" selected>select</option>
                         <option value="father">father</option>
@@ -96,8 +107,8 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-md-2 col-form-label" for="em_cont_address">Residential Address:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="em_cont_address">Residential Address:</label>
+                <div class="col-md-10 col-sm-8">
                     <textarea required class="form-control" id="em_cont_address" name="em_cont_address" rows="3"></textarea>
                 </div>
             </div>
@@ -111,10 +122,10 @@
                 </div>
             </div>
             <div class="row mb-3" id="row_staff_id" style="display: none">
-                <label class="col-md-2 col-form-label" for="em_cont_address">Enter Staff Id:</label>
-                <div class="col-md-10">
+                <label class="col-md-2 col-sm-4 col-form-label" for="em_cont_address">Enter Staff Id:</label>
+                <div class="col-md-10 col-sm-8">
                     <input required class="form-control" type="text" name="staff_id"
-                        onblur="checkStaffId(this.value)" id="input_staff_id"/>
+                        onblur="checkStaffId(this.value)" id="input_staff_id" />
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" id="btn-save">Save</button>
@@ -128,5 +139,19 @@
         const checkStaffId = (e) => {
             // alert('id')
         }
+        $(document).ready(function() {
+            $.ajax({
+                url: "/add_patient/get_id",
+                data: {
+                    _token: "{{ csrf_token() }} "
+                },
+                success: function(data) {
+                    if (data && data.success) {
+                        console.log(data);
+                        $('#pid').val(data.data);
+                    }
+                }
+            })
+        })
     </script>
 @endsection

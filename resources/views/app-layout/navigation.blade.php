@@ -13,7 +13,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::segment(1) === 'appointments' ? 'active' : '' }}" href="{{ url('/appointments') }}">View
+            <a class="nav-link {{ Request::segment(1) === 'appointments' ? 'active' : '' }}" href="{{ url('/appointments') }}">Scheduled
                 Appointments
                 <i class="float-end my-1 fas fa-chevron-right"></i>
             </a>

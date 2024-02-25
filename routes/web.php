@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientsController;
+use App\Http\Controllers\test\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,15 @@ use App\Http\Controllers\PatientsController;
 |
 */
 
+// Route::get('/test', [TestController::class, 'test']);
 Route::get('/', function () {
     return view('app-layout.index');
 });
-Route::get('/add_patient', function () {
-    return view('hims.add_patient');
-})->name('add_patient');
-Route::get('/appointments', function (){
-    return view('hims.appointments', ['title'=>'appointments']);
+Route::get('/add_patient', [PatientsController::class, 'create'])->name('add_patient');
+Route::get('/add_patient/get_id', [PatientsController::class, 'fetchID']);
+Route::get('/appointments', function () {
+    return view('hims.appointments', ['title' => 'appointments']);
 });
+Route::resource('/patient', PatientsController::class);
 Route::post('/add_patient', [PatientsController::class, 'store']);
 require __DIR__ . '/auth.php';
