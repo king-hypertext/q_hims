@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('phone');
             $table->date('date_of_birth');
             $table->longText('resident_address');
-            $table->boolean('is_staff')->default(0);
+            $table->boolean('is_staff')->default(0)->nullable();
+            $table->string('staff_id')->nullable();
             $table->string('em_cont_first_name');
             $table->string('em_cont_last_name');
             $table->string('em_cont_phone');

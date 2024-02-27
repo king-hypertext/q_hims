@@ -13,14 +13,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::segment(1) === 'appointments' ? 'active' : '' }}" href="{{ url('/appointments') }}">Scheduled
+            <a class="nav-link {{ Request::segment(1) === 'appointments' ? 'active' : '' }}"
+                href="{{ url('/appointments') }}">Scheduled
                 Appointments
                 <i class="float-end my-1 fas fa-chevron-right"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Request::segment(1) === '' ? 'active' : '' }}" href="#" data-bs-toggle="modal"
-                data-bs-target="#book_appointment">Book
+            <a class="nav-link {{ Request::segment(1) === 'book_appointment' ? 'active' : '' }}" href="#"
+                data-bs-toggle="modal" data-bs-target="#book_appointment">Book
                 Appointment
                 <i class="float-end my-1 fas fa-chevron-right"></i>
             </a>

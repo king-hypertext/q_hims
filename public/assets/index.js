@@ -13,9 +13,15 @@ $(document).ready(function () {
 	// });
 	// });
 
-	$('input[name="dob"]').datepicker({
-		dateFormat: "dd-mm-yy",
+	$('input[name="dob"], input.datepicker').datepicker({
+		dateFormat: "yy-mm-dd",
 		maxDate: '+0D',
+		changeMonth: true,
+		changeYear: true,
+		showOtherMonths: true,
+	});
+	$('input.datepicker, .datepicker').datepicker({
+		dateFormat: "yy-mm-dd",
 		changeMonth: true,
 		changeYear: true,
 		showOtherMonths: true,
